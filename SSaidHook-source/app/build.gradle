@@ -1,0 +1,39 @@
+plugins {
+    id 'com.android.application'
+}
+
+android {
+    namespace 'com.example.ssaidhook'
+    compileSdk 34
+
+    defaultConfig {
+        applicationId "com.example.ssaidhook"
+        minSdk 26
+        targetSdk 34
+        versionCode 13
+        versionName "3.0"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    packaging {
+        resources {
+            merges += ['META-INF/xposed/java_init.list', 'META-INF/xposed/module.prop']
+        }
+    }
+}
+
+dependencies {
+    // Modern LSPosed / libxposed API 102
+    compileOnly 'io.github.libxposed:api:102.0.0'
+    implementation 'io.github.libxposed:service:102.0.0'
+}
