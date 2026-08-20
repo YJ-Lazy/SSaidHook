@@ -1,0 +1,40 @@
+plugins {
+    id 'com.android.application'
+}
+
+android {
+    namespace 'com.example.ssaidhook'
+    compileSdk 34
+
+    defaultConfig {
+        applicationId "com.example.ssaidhook"
+        minSdk 26
+        targetSdk 34
+        versionCode 24
+        versionName "4.0"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+        debug {
+            minifyEnabled false
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    packagingOptions {
+        pickFirst 'META-INF/xposed/java_init.list'
+        pickFirst 'META-INF/xposed/module.prop'
+    }
+}
+
+dependencies {
+    // 仅编译期；运行时由 LSPosed 注入，不打进 APK
+    compileOnly 'io.github.libxposed:api:102.0.0'
+}

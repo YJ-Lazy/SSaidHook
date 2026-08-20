@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">SSaidHook</string>
+    <string name="module_description">多应用 Hook Settings.Secure.ANDROID_ID (SSAID)。libxposed API 102。支持搜索应用、多配置、结束进程。QQ群 764468055</string>
+    <string name="contact_btn">QQ群</string>
+    <string name="contact_info">加入 QQ 交流群\n\n群号：764468055\n\n点击「加入群聊」将尝试打开手机 QQ 并跳转该群。</string>
+    <string name="qq_group_number">764468055</string>
+</resources>
